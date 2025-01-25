@@ -1,55 +1,93 @@
+/* General Body Styles */
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
-  margin: 0;
+  background-color: #f4f4f4; /* Lighter background for better contrast */
+  color: #333; /* Darker text color for readability */
+  margin-left: 15%;
+  margin-right: 15%;
   padding: 0;
+  line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Headings */
+ h1, h2, h3, h4, h5, h6 {
   font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+  color: #222; /* Darker color for headings */
 }
 
+header p {
+  font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+  font-size: 24pt;
+  color: #222; /* Darker color for headings */
+}
+
+/* Container Styles */
 .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+/* Banner Image */
 img {
   width: 100%;
+  height: auto;
 }
 
+/* Navigation Menu */
 .main-nav ul {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   margin: 0;
   padding: 0;
 }
 
 .main-nav ul li {
-  flex: 1;
   text-align: center;
 }
 
 .main-nav ul li a {
   display: block;
-  color: inherit;
+  color: rgb(22, 22, 22);
   text-decoration: none;
   font-size: 1.25rem;
+  padding: 1rem;
+  transition: color 0.3s ease;
 }
 
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+  color: #007bff; /* Add hover effect for links */
+  border-bottom: 2px solid #007bff;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  background-color: #ffcc00;
+}
+
+/* Form Styles */
 form input,
 form textarea {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  width: 96%;
   margin-bottom: 1rem;
   padding: .5rem 1rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
 }
 
 form textarea {
@@ -64,8 +102,41 @@ form button {
   border: 2px solid black;
   padding: 1rem;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
+form button:hover {
+  background-color: #004fa3;
+  color: white;
+}
+
+/* Footer Styling */
 .site-footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
   padding: 2rem 0;
+}
+
+footer a {
+  color: #fff;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+  }
+
+  .main-nav ul li {
+    flex: none;
+  }
+
+  .site-header h1 {
+    font-size: 2rem;
+  }
+}
+
+*:focus {
+  outline: 3px solid #ffcc00; /* Bright outline for focused elements */
 }
